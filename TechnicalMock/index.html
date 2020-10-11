@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Technical Mock (RCFA)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="../index.html"><h1>RCFA Student Hub</h1></a>
+          </div>
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div id="collapsable-nav" class="collapse navbar-collapse">
+           <ul id="nav-list" class="nav navbar-nav navbar-right">
+            <li>
+              <a href="../index.html">Home</a>
+            </li>
+            <li>
+              <a href="index.html">Technical Mock</a>
+            </li>
+            <li>
+              <a href="menu-categories.html">Technical Material</a>
+            </li>
+            <li>
+              <a href="menu-categories.html">Networking Material</a>
+            </li>
+            <li>
+              <a href="menu-categories.html">Other</a>
+            </li>
+          </ul><!-- #nav-list -->
+        </div><!-- .collapse .navbar-collapse -->
+      </div><!-- .container -->
+    </nav><!-- #header-nav -->
+  </header>
+
+  <div id="main-content" class="container">
+    <h2>Instructions</h2>
+      <ul class="instructions">
+        <li>First choose which types of questions that you want to be interviewed on (you can chose the following topics: Accounting, Enterprise Value, DCF, M&A, and LBO)</li>
+        <li>Press the Randomize Question button to get a new question. If you want to see the previous or next question since its a continuation question you can do so by either clicking Previous Question or Next Question</li>
+        <li>By default, the answer to the question will not be shown. You must press Show Answer to toggle the answer</li>
+      </ul>    
+    
+    <h2>Dashboard</h2>
+
+    <div class="custom-control custom-switch custom-control-inline" id="first">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked onchange="accountingToggle()">
+        <label class="custom-control-label" for="customSwitch1">Accounting</label>
+      </div>
+  
+      <div class="custom-control custom-switch custom-control-inline" id="second">
+        <input type="checkbox" class="custom-control-input" id="customSwitch2" checked onchange="evToggle()">
+        <label class="custom-control-label" for="customSwitch1">Enterprise Value</label>
+      </div>
+  
+      <div class="custom-control custom-switch custom-control-inline">
+        <input type="checkbox" class="custom-control-input" id="customSwitch4" checked onchange="mandaToggle()">
+        <label class="custom-control-label" for="customSwitch1">M&A</label>
+      </div>
+      
+      <div class="custom-control custom-switch custom-control-inline">
+        <input type="checkbox" class="custom-control-input" id="customSwitch3" checked onchange="dcfToggle()">
+        <label class="custom-control-label" for="customSwitch1">DCF</label>
+      </div>
+  
+      <div class="custom-control custom-switch custom-control-inline">
+        <input type="checkbox" class="custom-control-input" id="customSwitch5">
+        <label class="custom-control-label" for="customSwitch1">LBO</label>
+      </div>
+    
+
+    <div id="buttons">
+      <button onclick="randomizeQuestion()">Randomize Question</button>
+      <button onclick="nextQuestion()">Next Question</button>
+      <button onclick="prevQuestion()">Previous Question</button>
+      <button onclick="showAnswer()">Show Answer</button>
+    </div>
+
+    <div id="question-number">Question Number : <span id="question-span">0</span></div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-sm-6" id="question-box-header">Question</div>
+        <div class="col-md-6 col-sm-6" id="answer-box-header">Answer</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6" id="question-box" style="overflow-y:scroll;"></div>
+        <div class="col-md-6 col-sm-6" id="answer-box" style="overflow-y:scroll;"></div>
+      </div>
+    </div>
+    
+    
+
+  </div>
+
+
+  <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/questions.js"></script> 
+  <script src="js/script.js"></script>
+</body>
+</html>
